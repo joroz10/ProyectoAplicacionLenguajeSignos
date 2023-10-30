@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProyectoAplicacionLenguajeSignos</string>
+    <string name="categorias">Categorias</string>
 </resources>
