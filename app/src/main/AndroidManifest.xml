@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ProyectoAplicacionLenguajeSignos"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ActivityCategorias"
+            android:exported="false" />
+        <activity
             android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
