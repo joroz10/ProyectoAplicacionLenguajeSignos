@@ -14,25 +14,25 @@ import com.example.proyectoaplicacionlenguajesignos.models.Palabra;
 
 import java.util.List;
 
-public class RecyclerDataAdapter extends RecyclerView.Adapter<RecyclerDataAdapter.RecyclerDataHolder>{
+public class PalabraAdapter extends RecyclerView.Adapter<PalabraAdapter.RecyclerDataHolder>{
     @NonNull
     List<Palabra> list;
     private View.OnClickListener listener;
     private OnItemClickListener itemListener;
 
-    public RecyclerDataAdapter(List<Palabra> list, OnItemClickListener listener){
+    public PalabraAdapter(List<Palabra> list, OnItemClickListener listener){
         this.list = list;
         this.itemListener = listener;
     }
 
     @Override
-    public RecyclerDataAdapter.RecyclerDataHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PalabraAdapter.RecyclerDataHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view, null, false);
         return new RecyclerDataHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerDataAdapter.RecyclerDataHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PalabraAdapter.RecyclerDataHolder holder, int position) {
         holder.assignData(list.get(position), itemListener);
     }
 
@@ -51,8 +51,7 @@ public class RecyclerDataAdapter extends RecyclerView.Adapter<RecyclerDataAdapte
         }
 
         public void assignData(Palabra p, OnItemClickListener itemListener) {
-            tw.setText(p.palabra
-            );
+            tw.setText(p.palabra);
             img.setImageResource(p.drawable);
 
             itemView.setOnClickListener(new View.OnClickListener() {
