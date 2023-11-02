@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.proyectoaplicacionlenguajesignos.R;
 
-public class ActivityBuscador extends AppCompatActivity {
+public class ActivityPalabras extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
