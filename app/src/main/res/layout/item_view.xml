@@ -16,7 +16,6 @@
             android:id="@+id/lblItemView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#C63F3F"
             android:text="TextView"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -26,6 +25,7 @@
             android:id="@+id/imgItemView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
             android:textAlignment="center"
             tools:srcCompat="@tools:sample/avatars" />
 

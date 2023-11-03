@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ActivityCategorias">
+    android:backgroundTint="@color/white"
+    tools:context=".activities.ActivityPalabrasPorCategoria">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/lblCategoria"
         android:layout_width="216dp"
         android:layout_height="47dp"
+        android:backgroundTint="@color/white"
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="@string/categorias"
@@ -22,13 +24,13 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvCategorias"
-        android:layout_width="409dp"
-        android:layout_height="649dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/rcvPalabrasCaegoria"
+        android:layout_width="412dp"
+        android:layout_height="671dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblCategoria"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

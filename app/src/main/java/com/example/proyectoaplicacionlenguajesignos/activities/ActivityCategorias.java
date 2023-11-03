@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -40,10 +41,12 @@ public class ActivityCategorias extends AppCompatActivity {
 
             @Override
             public void onItemClick(String s, int position) {
-                Toast.makeText(ActivityCategorias.this, s, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ActivityCategorias.this,ActivityPalabrasPorCategoria.class);
+                intent.putExtra("categoria",s.toString());
+                startActivity(intent);
             }
         });
         recyclerView.setAdapter(categoriaAdapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,1));
     }
 }

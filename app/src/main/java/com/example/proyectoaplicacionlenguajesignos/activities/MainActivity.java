@@ -34,6 +34,24 @@ public class MainActivity extends AppCompatActivity {
 
         realm.beginTransaction();
         realm.deleteAll();
+        realm.copyToRealmOrUpdate(new Palabra("Día de la semana",R.drawable.dia_de_la_semana,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Día",R.drawable.dia_manana,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Domingo",R.drawable.domingo,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Fin de semana",R.drawable.fin_de_semana,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Jueves",R.drawable.jueves,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Lunes",R.drawable.lunes,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Martes",R.drawable.martes,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Miercoles",R.drawable.miercoles,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Sabado",R.drawable.sabado,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Semana",R.drawable.semana,"Calendario","Semana"));
+        realm.copyToRealmOrUpdate(new Palabra("Viernes",R.drawable.viernes,"Calendario","Semana"));
+
+        realm.copyToRealmOrUpdate(new Palabra("Estaciones",R.drawable.estaciones,"Calendario","Estaciones"));
+        realm.copyToRealmOrUpdate(new Palabra("Invierno",R.drawable.invierno,"Calendario","Estaciones"));
+        realm.copyToRealmOrUpdate(new Palabra("Otoño",R.drawable.otono,"Calendario","Estaciones"));
+        realm.copyToRealmOrUpdate(new Palabra("Primavera",R.drawable.primavera,"Calendario","Estaciones"));
+        realm.copyToRealmOrUpdate(new Palabra("Verano",R.drawable.verano,"Calendario","Estaciones"));
+
         realm.copyToRealmOrUpdate(new Palabra("Boca",R.drawable.boca,"Cuerpo","Cuerpo"));
         realm.copyToRealmOrUpdate(new Palabra("Brazo",R.drawable.brazo,"Cuerpo","Cuerpo"));
         realm.copyToRealmOrUpdate(new Palabra("Cabeza",R.drawable.cabeza,"Cuerpo","Cuerpo"));

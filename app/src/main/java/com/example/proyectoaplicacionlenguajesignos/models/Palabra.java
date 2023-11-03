@@ -21,4 +21,35 @@ public class Palabra extends RealmObject {
         this.subcategoria = subcategoria;
     }
 
+    public String getPalabra() {
+        return palabra;
+    }
+
+    public void setPalabra(String palabra) {
+        this.palabra = palabra;
+    }
+
+    public int getDrawable() {
+        return drawable;
+    }
+
+    public void setDrawable(int drawable) {
+        this.drawable = drawable;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getSubcategoria() {
+        return subcategoria;
+    }
+
+    public void setSubcategoria(String subcategoria) {
+        this.subcategoria = subcategoria;
+    }
 }
