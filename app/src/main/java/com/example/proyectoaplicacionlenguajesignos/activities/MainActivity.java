@@ -34,11 +34,30 @@ public class MainActivity extends AppCompatActivity {
 
         realm.beginTransaction();
         realm.deleteAll();
-        realm.copyToRealmOrUpdate(new Palabra("Boca",R.drawable.boca,"cuerpo","cuerpo"));
-        realm.copyToRealmOrUpdate(new Palabra("Brazo",R.drawable.brazo,"cuerpo","cuerpo"));
-        realm.copyToRealmOrUpdate(new Palabra("Cabeza",R.drawable.cabeza,"cuerpo","cuerpo"));
-        realm.copyToRealmOrUpdate(new Palabra("Cuerpo",R.drawable.cuerpo,"cuerpo","cuerpo"));
-        realm.copyToRealmOrUpdate(new Palabra("Culo",R.drawable.culo,"cuerpo","cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Boca",R.drawable.boca,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Brazo",R.drawable.brazo,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Cabeza",R.drawable.cabeza,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Cuerpo",R.drawable.cuerpo,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Culo",R.drawable.culo,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Dedo",R.drawable.dedo,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Dientes",R.drawable.dientes,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Lengua",R.drawable.lengua,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Mano",R.drawable.mano,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Nariz",R.drawable.nariz,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Ojo",R.drawable.ojo,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Oreja",R.drawable.oreja,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Pelo",R.drawable.pelo,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Pene",R.drawable.pene,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Pie",R.drawable.pie,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Pierna",R.drawable.pierna,"Cuerpo","Cuerpo"));
+        realm.copyToRealmOrUpdate(new Palabra("Vulva",R.drawable.vulva,"Cuerpo","Cuerpo"));
+
+        realm.copyToRealmOrUpdate(new Palabra("Gusto",R.drawable.gusto,"Cuerpo","Sentido"));
+        realm.copyToRealmOrUpdate(new Palabra("Oido",R.drawable.oido,"Cuerpo","Sentido"));
+        realm.copyToRealmOrUpdate(new Palabra("Olfato",R.drawable.olfato,"Cuerpo","Sentido"));
+        realm.copyToRealmOrUpdate(new Palabra("Sentidos",R.drawable.sentidos,"Cuerpo","Sentido"));
+        realm.copyToRealmOrUpdate(new Palabra("Tacto",R.drawable.tacto,"Cuerpo","Sentido"));
+        realm.copyToRealmOrUpdate(new Palabra("Vista",R.drawable.vista,"Cuerpo","Sentido"));
         realm.commitTransaction();
 
         btnCategoria.setOnClickListener(new View.OnClickListener() {
