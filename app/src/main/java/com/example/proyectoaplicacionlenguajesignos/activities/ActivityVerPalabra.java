@@ -24,6 +24,7 @@ public class ActivityVerPalabra extends AppCompatActivity {
 
     TextView lblPalabra;
     ImageView imgPalabra;
+    TextView lblSubcategoria;
     RecyclerView rcvSubcategoria;
     Realm realm;
     PalabraAdapter palabraAdapter;
@@ -35,6 +36,7 @@ public class ActivityVerPalabra extends AppCompatActivity {
         Realm.init(this.getBaseContext());
         realm = Realm.getDefaultInstance();
 
+        lblSubcategoria = (TextView) findViewById(R.id.lblSubcategoria);
         lblPalabra = (TextView) findViewById(R.id.lblPalabra);
         imgPalabra = (ImageView) findViewById(R.id.imgPalabra);
         rcvSubcategoria = (RecyclerView) findViewById(R.id.rcvPalabra);
@@ -46,8 +48,10 @@ public class ActivityVerPalabra extends AppCompatActivity {
         lblPalabra.setText(palabra);
         Integer img = bundle.getInt("imagen");
         imgPalabra.setImageResource(img);
-
         String subcategoria = bundle.getString("subcategoria");
+        lblSubcategoria.setText("Mas palabras similares");
+
+
         palabras = realm.where(Palabra.class).findAll();
         for (Palabra p:palabras){
             String strCategoria = p.getSubcategoria();

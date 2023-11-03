@@ -14,9 +14,12 @@ import com.example.proyectoaplicacionlenguajesignos.adapters.PalabraAdapter;
 import com.example.proyectoaplicacionlenguajesignos.models.Palabra;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.Sort;
 
 public class ActivityCategorias extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -37,6 +40,7 @@ public class ActivityCategorias extends AppCompatActivity {
                 listCategoria.add(p.categoria);
             }
         }
+        Collections.sort(listCategoria);
         categoriaAdapter = new CategoriaAdapter(listCategoria, new CategoriaAdapter.OnItemClickListener(){
 
             @Override

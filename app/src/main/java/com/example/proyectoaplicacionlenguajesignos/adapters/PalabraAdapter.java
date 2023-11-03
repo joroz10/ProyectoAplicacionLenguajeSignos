@@ -35,7 +35,6 @@ public class PalabraAdapter extends RecyclerView.Adapter<PalabraAdapter.Recycler
     public void onBindViewHolder(@NonNull PalabraAdapter.RecyclerDataHolder holder, int position) {
         holder.assignData(list.get(position), itemListener);
     }
-
     @Override
     public int getItemCount() {
         return list.size();
