@@ -362,10 +362,10 @@ public class MainActivity extends AppCompatActivity {
         realm.copyToRealmOrUpdate(new Palabra("Pierna",R.drawable.pierna,"Cuerpo","Cuerpo"));
         realm.copyToRealmOrUpdate(new Palabra("Vulva",R.drawable.vulva,"Cuerpo","Cuerpo"));
 
+        realm.copyToRealmOrUpdate(new Palabra("Sentidos",R.drawable.sentidos,"Cuerpo","Sentido"));
         realm.copyToRealmOrUpdate(new Palabra("Gusto",R.drawable.gusto,"Cuerpo","Sentido"));
         realm.copyToRealmOrUpdate(new Palabra("Oido",R.drawable.oido,"Cuerpo","Sentido"));
         realm.copyToRealmOrUpdate(new Palabra("Olfato",R.drawable.olfato,"Cuerpo","Sentido"));
-        realm.copyToRealmOrUpdate(new Palabra("Sentidos",R.drawable.sentidos,"Cuerpo","Sentido"));
         realm.copyToRealmOrUpdate(new Palabra("Tacto",R.drawable.tacto,"Cuerpo","Sentido"));
         realm.copyToRealmOrUpdate(new Palabra("Vista",R.drawable.vista,"Cuerpo","Sentido"));
         realm.commitTransaction();
