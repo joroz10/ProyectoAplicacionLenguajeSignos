@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         realm.beginTransaction();
         realm.deleteAll();
-        realm.copyToRealmOrUpdate(new Palabra("Alfombra",R.drawable.alfombra,"Casa","Casa"));
+        realm.copyToRealmOrUpdate(
+        realm.copyToRealmOrUpdate(new Palabra("Alfombra",R.drawable.alfombra,"Casa","Casa")));
         realm.copyToRealmOrUpdate(new Palabra("Armario",R.drawable.armario,"Casa","Casa"));
         realm.copyToRealmOrUpdate(new Palabra("Baño",R.drawable.bano,"Casa","Casa"));
         realm.copyToRealmOrUpdate(new Palabra("Cama",R.drawable.cama,"Casa","Casa"));
@@ -331,7 +332,6 @@ public class MainActivity extends AppCompatActivity {
         realm.copyToRealmOrUpdate(new Palabra("Domingo",R.drawable.domingo,"Calendario","Semana"));
         realm.copyToRealmOrUpdate(new Palabra("Fin de semana",R.drawable.fin_de_semana,"Calendario","Semana"));
         realm.copyToRealmOrUpdate(new Palabra("Jueves",R.drawable.jueves,"Calendario","Semana"));
-        realm.copyToRealmOrUpdate(new Palabra("Lunes",R.drawable.lunes,"Calendario","Semana"));
         realm.copyToRealmOrUpdate(new Palabra("Martes",R.drawable.martes,"Calendario","Semana"));
         realm.copyToRealmOrUpdate(new Palabra("Miercoles",R.drawable.miercoles,"Calendario","Semana"));
         realm.copyToRealmOrUpdate(new Palabra("Sabado",R.drawable.sabado,"Calendario","Semana"));
