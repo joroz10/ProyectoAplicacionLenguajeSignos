@@ -72,6 +72,8 @@ public class ActivityPalabras extends AppCompatActivity {
 
                     }
                 });
+
+                //comentario
                 rcvBuscador.setAdapter(palabraAdapter);
                 rcvBuscador.setLayoutManager(new GridLayoutManager(ActivityPalabras.this,2));
             }
