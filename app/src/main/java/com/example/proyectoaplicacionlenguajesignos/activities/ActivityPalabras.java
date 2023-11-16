@@ -1,6 +1,7 @@
 package com.example.proyectoaplicacionlenguajesignos.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,7 +46,7 @@ public class ActivityPalabras extends AppCompatActivity {
         });
 
         rcvBuscador.setAdapter(palabraAdapter);
-        rcvBuscador.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
+        rcvBuscador.setLayoutManager(new GridLayoutManager(this,2));
 
 
 
@@ -63,7 +64,16 @@ public class ActivityPalabras extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+                List palabrasBuscador = new ArrayList();
+                palabrasBuscador = (List) realm.where(Palabra.class).contains("palabra",buscador.getText().toString());
+                palabraAdapter =new PalabraAdapter(palabrasBuscador, new PalabraAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Palabra p, int position) {
 
+                    }
+                });
+                rcvBuscador.setAdapter(palabraAdapter);
+                rcvBuscador.setLayoutManager(new GridLayoutManager(ActivityPalabras.this,2));
             }
         });
     }

@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         realm = Realm.getDefaultInstance();
         btnCategoria = (Button) findViewById(R.id.btnPorCategoria);
+        btnPalabra = (Button) findViewById(R.id.btnPorPalabra);
 
         realm.beginTransaction();
         realm.deleteAll();
@@ -370,6 +371,13 @@ public class MainActivity extends AppCompatActivity {
         realm.copyToRealmOrUpdate(new Palabra("Vista",R.drawable.vista,"Cuerpo","Sentido"));
         realm.commitTransaction();
 
+        btnPalabra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ActivityPalabras.class);
+                startActivity(intent);
+            }
+        });
         btnCategoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
