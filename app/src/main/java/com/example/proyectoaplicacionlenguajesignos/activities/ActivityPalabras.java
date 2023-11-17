@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.Editable;
@@ -17,9 +18,11 @@ import com.example.proyectoaplicacionlenguajesignos.adapters.PalabraAdapter;
 import com.example.proyectoaplicacionlenguajesignos.models.Palabra;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.Sort;
 
 public class ActivityPalabras extends AppCompatActivity {
 
@@ -37,11 +40,17 @@ public class ActivityPalabras extends AppCompatActivity {
         rcvBuscador = (RecyclerView) findViewById(R.id.rcvBuscador);
         List palabras;
 
-        palabras = realm.where(Palabra.class).findAll();
+        palabras = realm.where(Palabra.class).sort("palabra", Sort.ASCENDING)
+                .findAll();;
+
         palabraAdapter =new PalabraAdapter(palabras, new PalabraAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Palabra p, int position) {
-
+                Intent intent = new Intent(ActivityPalabras.this,ActivityVerPalabra.class);
+                intent.putExtra("palabra",p.getPalabra());
+                intent.putExtra("imagen",p.getDrawable());
+                intent.putExtra("subcategoria",p.getSubcategoria());
+                startActivity(intent);
             }
         });
 
@@ -65,15 +74,23 @@ public class ActivityPalabras extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 List palabrasBuscador = new ArrayList();
-                palabrasBuscador = (List) realm.where(Palabra.class).contains("palabra",buscador.getText().toString());
+                for (Object o:palabras) {
+                    Palabra p = (Palabra) o;
+                    if(p.palabra.toLowerCase().contains(buscador.getText().toString())){
+                        palabrasBuscador.add(p);
+                    }
+                }
+
                 palabraAdapter =new PalabraAdapter(palabrasBuscador, new PalabraAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(Palabra p, int position) {
-
+                        Intent intent = new Intent(ActivityPalabras.this,ActivityVerPalabra.class);
+                        intent.putExtra("palabra",p.getPalabra());
+                        intent.putExtra("imagen",p.getDrawable());
+                        intent.putExtra("subcategoria",p.getSubcategoria());
+                        startActivity(intent);
                     }
                 });
-
-                //comentario
                 rcvBuscador.setAdapter(palabraAdapter);
                 rcvBuscador.setLayoutManager(new GridLayoutManager(ActivityPalabras.this,2));
             }
