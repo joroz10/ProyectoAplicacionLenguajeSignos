@@ -38,13 +38,11 @@ public class MainActivity extends AppCompatActivity {
         list = utils.rellenar();
 
         realm.beginTransaction();
-        if(realm.isEmpty()){
-            for (Object o:list) {
-                Palabra p = (Palabra) o;
-                realm.copyToRealmOrUpdate(p);
-            }
+        realm.deleteAll();
+        for (Object o:list) {
+            Palabra p = (Palabra) o;
+            realm.copyToRealmOrUpdate(p);
         }
-
         realm.commitTransaction();
 
         btnPalabra.setOnClickListener(new View.OnClickListener() {
